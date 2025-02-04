@@ -4,7 +4,7 @@ echo "System monitoring alert : $date"
 
 echo "============================"
 
-echo"Disk usage : "
+echo "Disk usage : "
 
 my_disk="df -h / "
 
@@ -13,7 +13,7 @@ usage=$(df / | awk 'NR==2 {print $5}' | sed 's/%//')
 $my_disk
 
 if [ "$usage" -gt 30 ]; then
-
+            echo "DIsk usage is greater than 30% : $usage%" | mail -s "Warning from Ubunto machine" ahmedtaha1642@gmail.com
       	echo "Disk usage is above 30%. Current usage: $usage%"
 fi
 
